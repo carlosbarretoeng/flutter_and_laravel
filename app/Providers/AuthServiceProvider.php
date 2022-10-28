@@ -25,6 +25,6 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //
+        $this->app['url']->forceRootUrl(env('APP_URL'));
     }
 }
