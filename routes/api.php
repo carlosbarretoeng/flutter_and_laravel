@@ -16,6 +16,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('auth/login', [\App\Http\Controllers\Api\AuthController::class, "login"]);
 
+Route::middleware('auth:sanctum')->resource('plano_de_contas', \App\Http\Controllers\PlanoDeContaController::class);
+
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
